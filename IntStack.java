@@ -23,6 +23,20 @@ public class IntStack {
         printStack.push(154);
         printStack.print();
 
+        //Henry's Resize test code
+        IntStack test = new IntStack();
+        System.out.println(test.isEmpty());
+        for (int i = 0; i < 204; i++) {
+            test.push(1);
+        }
+        System.out.print("Resized");
+
+
+		//Count testing
+        //stack count works!
+        is.push(4);
+        System.out.println(is.count(4));
+
 	}
 	
 	
@@ -57,7 +71,11 @@ public class IntStack {
     make a new larger implementing array
     */
     private void resize() {
-
+        int[] biggerstack = new int[stack.length*2];
+        for (int i = 0; i < stack.length; i++) {
+            biggerstack[i] = stack[i];
+        }
+        stack = biggerstack;
     }
 
     /*
@@ -112,7 +130,13 @@ public class IntStack {
     how many [num]'s are n the stack?
     */
     public int count(int num) {
-			return 0;
+        int counter = 0;
+        for(int i = 0; i < stack.length; i ++){
+            if (stack[i] == num){
+                counter++;
+            }
+        }
+        return counter;
     }
 
     /*
