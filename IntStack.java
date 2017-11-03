@@ -10,7 +10,7 @@ public class IntStack {
 		System.out.println(is.peek());
 
 		//Count testing
-        //stack count works
+        //stack count works!
         is.push(4);
         System.out.println(is.count(4));
 
