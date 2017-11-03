@@ -8,8 +8,16 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
+
+        //Henry's Resize test code
+        IntStack test = new IntStack();
+        System.out.println(test.isEmpty());
+        for (int i = 0; i < 204; i++) {
+            test.push(1);
+        }
+        System.out.print("Resized");
+
 	}
-	
 	
 	int[] stack;
 	int top;
@@ -42,7 +50,11 @@ public class IntStack {
     make a new larger implementing array
     */
     private void resize() {
-
+        int[] biggerstack = new int[stack.length*2];
+        for (int i = 0; i < stack.length; i++) {
+            biggerstack[i] = stack[i];
+        }
+        stack = biggerstack;
     }
 
     /*
