@@ -5,7 +5,9 @@ public class IntSet {
 		System.out.println(devin.contains(30));
 		devin.add(30);
 		System.out.println(devin.contains(30));
-	}
+
+
+    }
 	
 	
 	boolean[] arr;
@@ -32,7 +34,7 @@ public class IntSet {
     returns true if s is a subset of set
     */
     boolean containsAll(IntSet s) {
-      return false;
+      return true;
     }
 
     /*

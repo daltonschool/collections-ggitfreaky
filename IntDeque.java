@@ -2,6 +2,9 @@ public class IntDeque {
   int[] q;
   int head, tail;
 
+
+
+
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
