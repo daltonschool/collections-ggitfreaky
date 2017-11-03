@@ -8,6 +8,20 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
+
+
+
+		//print testing
+        System.out.println("Print");
+        IntStack printStack = new IntStack();
+        printStack.push(3);
+        printStack.push(4);
+        printStack.push(5);
+        printStack.push(50);
+        printStack.push(54);
+        printStack.push(154);
+        printStack.print();
+
 	}
 	
 	
@@ -63,6 +77,12 @@ public class IntStack {
     print the Stack pretty-like
     */
     public void print() {
+        for (int i = top -1; i >= 0; i--) {
+            if (stack[i]<10)System.out.println("| " + stack[i] + "   |");
+            else if (stack[i]> 100)System.out.println("| " + stack[i] + " |");
+            else    System.out.println("| " + stack[i] + "  |");
+        }
+        System.out.println("|_____|");
 
     }
 
