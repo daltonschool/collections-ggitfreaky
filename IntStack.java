@@ -6,11 +6,25 @@ public class IntStack {
 		is.push(3);
 		is.push(4);
 		is.push(5);
+         System.out.println(is.size());
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
 
-		//testing code for popping multiple items
+        //Henry's Resize test code
+        IntStack test = new IntStack();
+        System.out.println(test.isEmpty());
+        for (int i = 0; i < 204; i++) {
+            test.push(1);
+        }
+        System.out.print("Resized");
+
+		//Count testing
+        //stack count works!
+        is.push(4);
+        System.out.println(is.count(4));
+
+        //testing code for popping multiple items
         IntStack mine = new IntStack();
         mine.push(3);
         mine.push(4);
@@ -28,8 +42,8 @@ public class IntStack {
             System.out.println(tester2[i]);
         }
     }
-	
-	
+
+
 	int[] stack;
 	int top;
 	
@@ -61,14 +75,18 @@ public class IntStack {
     make a new larger implementing array
     */
     private void resize() {
-
+        int[] biggerstack = new int[stack.length*2];
+        for (int i = 0; i < stack.length; i++) {
+            biggerstack[i] = stack[i];
+        }
+        stack = biggerstack;
     }
 
     /*
     how large is the stack?
     */
     public int size() {
-		return 0;
+       return top;
     }
 
     /*
@@ -116,7 +134,13 @@ public class IntStack {
     how many [num]'s are n the stack?
     */
     public int count(int num) {
-			return 0;
+        int counter = 0;
+        for(int i = 0; i < stack.length; i ++){
+            if (stack[i] == num){
+                counter++;
+            }
+        }
+        return counter;
     }
 
     /*
