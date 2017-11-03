@@ -8,7 +8,13 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-	}
+
+		//Count testing
+        //stack count works
+        is.push(4);
+        System.out.println(is.count(4));
+
+    }
 	
 	
 	int[] stack;
@@ -88,10 +94,20 @@ public class IntStack {
     }
 
     /*
-    how many [num]'s are n the stack?
+    how many [num]'s are in the stack?
+    //done by Isha
+        search for number in array
+        add to counter every time it's found
+        return that number
     */
     public int count(int num) {
-			return 0;
+        int counter = 0;
+        for(int i = 0; i < stack.length; i ++){
+            if (stack[i] == num){
+                counter++;
+            }
+        }
+        return counter;
     }
 
     /*
@@ -117,6 +133,7 @@ public class IntStack {
 
     /*
     return a new stack that includes the top size items.
+
     */
     public IntStack subStack(int size) {
 			return null;
