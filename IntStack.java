@@ -5,6 +5,7 @@ public class IntStack {
 		is.push(3);
 		is.push(4);
 		is.push(5);
+         System.out.println(is.size());
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
@@ -33,7 +34,7 @@ public class IntStack {
 
 	void push(int i) {
 		if(top==stack.length) resize();
-		stack[top++]=i;	 
+		stack[top++]=i;
 	}
 
 	int pop() {
@@ -61,7 +62,7 @@ public class IntStack {
     how large is the stack?
     */
     public int size() {
-		return 0;
+       return top;
     }
 
     /*
