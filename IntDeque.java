@@ -5,7 +5,7 @@ public class IntDeque {
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
-    tail=0;
+    tail=1;
   }
 
   /*
@@ -19,7 +19,7 @@ public class IntDeque {
   put the last item
   */
   public void putLast(int item) {
-
+    q[tail++] = item;
   }
 
   /*
