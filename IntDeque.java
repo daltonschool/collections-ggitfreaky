@@ -8,7 +8,7 @@ public class IntDeque {
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
-    tail=0;
+    tail=1;
   }
 
   /*
@@ -43,7 +43,7 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-    return 0;
+    return q[head++];
   }
 
   /*
