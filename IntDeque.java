@@ -5,14 +5,14 @@ public class IntDeque {
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
-    tail=0;
+    tail=1;
   }
 
   /*
   put the first item
   */
   public void putFirst(int item) {
-
+    q[head--] = item;
   }
 
   /*
