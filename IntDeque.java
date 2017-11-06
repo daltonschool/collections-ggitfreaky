@@ -3,8 +3,14 @@ public class IntDeque {
   int head, tail;
 
 
+    public static void main(String[] args) {
+        IntDeque id = new IntDeque(100);
+        id.putFirst(3);
+        id.putFirst(4);
+        id.putFirst(5);
+        id.putLast(7);
 
-
+    }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
