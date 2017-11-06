@@ -2,24 +2,27 @@ public class IntDeque {
   int[] q;
   int head, tail;
 
+
+
+
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
-    tail=0;
+    tail=1;
   }
 
   /*
   put the first item
   */
   public void putFirst(int item) {
-
+    q[head--] = item;
   }
 
   /*
   put the last item
   */
   public void putLast(int item) {
-
+    q[tail++] = item;
   }
 
   /*
@@ -40,7 +43,7 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-    return 0;
+    return q[++head];
   }
 
   /*
