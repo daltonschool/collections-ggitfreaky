@@ -6,7 +6,7 @@ public class IntStack {
 		is.push(3);
 		is.push(4);
 		is.push(5);
-         System.out.println(is.size());
+        System.out.println("size: " + is.size());
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());

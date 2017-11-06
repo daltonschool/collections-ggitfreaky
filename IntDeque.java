@@ -15,14 +15,14 @@ public class IntDeque {
   put the first item
   */
   public void putFirst(int item) {
-
+    q[head--] = item;
   }
 
   /*
   put the last item
   */
   public void putLast(int item) {
-
+    q[tail++] = item;
   }
 
   /*
