@@ -43,7 +43,7 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-    return q[head++];
+    return q[++head];
   }
 
   /*
