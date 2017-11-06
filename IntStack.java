@@ -1,4 +1,5 @@
 public class IntStack {
+
 	public static void main(String[] args) {
 		IntStack is = new IntStack();
 		System.out.println(is.isEmpty());
@@ -10,6 +11,19 @@ public class IntStack {
 		System.out.println(is.pop());
 		System.out.println(is.peek());
 
+
+
+		//print testing
+        System.out.println("Print");
+        IntStack printStack = new IntStack();
+        printStack.push(3);
+        printStack.push(4);
+        printStack.push(5);
+        printStack.push(50);
+        printStack.push(54);
+        printStack.push(154);
+        printStack.print();
+
         //Henry's Resize test code
         IntStack test = new IntStack();
         System.out.println(test.isEmpty());
@@ -18,13 +32,29 @@ public class IntStack {
         }
         System.out.print("Resized");
 
-
 		//Count testing
         //stack count works!
         is.push(4);
         System.out.println(is.count(4));
 
-	}
+        //testing code for popping multiple items
+        IntStack mine = new IntStack();
+        mine.push(3);
+        mine.push(4);
+        mine.push(5);
+		int[] tester = mine.pop(2);
+        for (int i = 0; i < tester.length; i++) {
+            System.out.println(tester[i]);
+        }
+        IntStack mine2 = new IntStack();
+        mine2.push(3);
+        mine2.push(4);
+        mine2.push(5);
+        int[] tester2 = mine2.pop(4);
+        for (int i = 0; i < tester2.length; i++) {
+            System.out.println(tester2[i]);
+        }
+    }
 
 
 	int[] stack;
@@ -83,6 +113,12 @@ public class IntStack {
     print the Stack pretty-like
     */
     public void print() {
+        for (int i = top -1; i >= 0; i--) {
+            if (stack[i]<10)System.out.println("| " + stack[i] + "   |");
+            else if (stack[i]> 100)System.out.println("| " + stack[i] + " |");
+            else    System.out.println("| " + stack[i] + "  |");
+        }
+        System.out.println("|_____|");
 
     }
 
@@ -97,7 +133,13 @@ public class IntStack {
     return multiple items from the top in a new array
     */
     public int[] pop(int multiple) {
-			return null;
+        int[] answer = new int[multiple];
+        if(multiple>(top)) answer = new int[top];
+        for (int i = 0; i < multiple; i++) {
+            if(!isEmpty()) answer[i] = (stack[--top]);
+            if(top<0) return answer;
+        }
+        return answer;
     }
 
     /*
