@@ -6,6 +6,20 @@ public class IntSet {
 		devin.add(30);
 		System.out.println(devin.contains(30));
 
+		//ContainsAll Test Code
+        IntSet kenny = new IntSet(100);
+        IntSet david = new IntSet(100);
+        IntSet franzese = new IntSet(100);
+        kenny.add(1);
+        kenny.add(11);
+        kenny.add(21);
+        kenny.add(31);
+        franzese.add(1);
+        franzese.add(11);
+        david.add(22);
+        System.out.println(kenny.containsAll(franzese));
+        System.out.println(kenny.containsAll(david));
+
 
     }
 	
@@ -34,7 +48,13 @@ public class IntSet {
     returns true if s is a subset of set
     */
     boolean containsAll(IntSet s) {
-        return false;
+        for (int i = 0; i < s.arr.length; i++) {
+            if(s.contains(i) && !this.contains(i)){
+                return false;
+            }
+
+        }
+        return true;
     }
 
     /*
