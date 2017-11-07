@@ -13,6 +13,12 @@ public class IntDeque {
       System.out.println(id.getLast()); //3
       System.out.println(id.getFirst()); //5
 
+      id.putLast(8);
+      id.putLast(9);
+      id.putLast(10);
+      System.out.println(id.getLast());
+      System.out.println(id.getLast());
+      System.out.println(id.getFirst());
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
@@ -46,7 +52,7 @@ public class IntDeque {
   }
 
   /*
-  return the first item
+  double the size of the array
   */
   public void resize() {
     int[] big = new int[q.length*2];
@@ -69,14 +75,18 @@ public class IntDeque {
   return the first item
   */
   public int peekFirst() {
-    return q[head+1];
+    if(head == q.length-1) return q[0];
+    else return q[head+1];
   }
 
   /*
   return the last item
   */
   public int peekLast() {
-    return q[tail-1];
+      if (tail == q.length - 1) return q[0];
+        else {
+          return q[tail-1];
+      }
   }
 
   /*
