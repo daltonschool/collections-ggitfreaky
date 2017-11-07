@@ -5,7 +5,9 @@ public class IntDeque {
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
-    tail=0;
+    tail=1;
+
+    //testing code for peekFirst
   }
 
   /*
@@ -25,8 +27,28 @@ public class IntDeque {
   /*
   return the first item
   */
+  public void resize() {
+    int[] big = new int[q.length*2];
+    for (int i = 0; i < q.length; i++) {
+      big[i] = q[i];
+    }
+    if (head==tail) {
+      int j = big.length - 1;
+      for (int i = q.length - 1; i > head; i--) {
+        q[i] = big[j];
+        j--;
+      }
+      head = j;
+      q = big;
+    }
+    else System.out.println("You cannot resize a deque unless HEAD and TAIL are at the same spot!");
+  }
+
+  /*
+  return the first item
+  */
   public int peekFirst() {
-    return 0;
+    return q[head+1];
   }
 
   /*
