@@ -23,8 +23,6 @@ public class IntSet {
         System.out.println(kenny.containsAll(david));
 
 
-    }
-
 		//
 	}
 
