@@ -9,22 +9,26 @@ public class IntDeque {
         id.putFirst(4);
         id.putFirst(5);
         id.putLast(7);
+      System.out.println(id.getLast());
+      System.out.println(id.getLast());
+      System.out.println(id.getFirst());
 
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
     tail=1;
-
-
-
   }
-
   /*
   put the first item
   */
   public void putFirst(int item) {
-    q[head--] = item;
+    if(head == 0){
+      q[q.length-1]= item;
+      head = q.length-2;
+    }else{
+      q[head--] = item;
+    }
   }
 
   /*
@@ -65,7 +69,7 @@ public class IntDeque {
   return the last item
   */
   public int peekLast() {
-    return 0;
+    return q[tail-1];
   }
 
   /*
