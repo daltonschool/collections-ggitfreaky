@@ -83,7 +83,8 @@ public class IntDeque {
   get the last item
   */
   public int getLast() {
-    return 0;
+
+    return q[--tail];
   }
 
   /*
