@@ -76,7 +76,6 @@ public class IntDeque {
   */
   public int getFirst() {
     return q[++head];
-
   }
 
   /*
