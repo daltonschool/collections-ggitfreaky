@@ -83,7 +83,10 @@ public class IntDeque {
   return the last item
   */
   public int peekLast() {
-    return q[tail-1];
+      if (tail == q.length - 1) return q[0];
+        else {
+          return q[tail-1];
+      }
   }
 
   /*
