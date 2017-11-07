@@ -158,6 +158,7 @@ public class IntStack {
         int counter = 0;
         for(int i = 0; i < stack.length; i ++){
             if (stack[i] == num){
+
                 counter++;
             }
         }
