@@ -2,26 +2,36 @@ public class IntDeque {
   int[] q;
   int head, tail;
 
+
+    public static void main(String[] args) {
+        IntDeque id = new IntDeque(100);
+        id.putFirst(3);
+        id.putFirst(4);
+        id.putFirst(5);
+        id.putLast(7);
+
+    }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
     tail=1;
 
-    //testing code for peekFirst
+
+
   }
 
   /*
   put the first item
   */
   public void putFirst(int item) {
-
+    q[head--] = item;
   }
 
   /*
   put the last item
   */
   public void putLast(int item) {
-
+    q[tail++] = item;
   }
 
   /*
@@ -62,7 +72,7 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-    return 0;
+    return q[++head];
   }
 
   /*

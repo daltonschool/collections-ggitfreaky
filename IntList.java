@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class IntList {
     private int[] arr;
     int size = 0;
@@ -35,7 +37,7 @@ public class IntList {
       for(int i = index; i<size; i++) {
         arr[i] = arr[i+1];
       }
-
+        //resize here. Ask before tho. But probs
       size--;
     }
 
@@ -54,7 +56,17 @@ public class IntList {
     shuffle — randomly permutes the elements in a List.
     */
     static void shuffle(IntList l) {
-
+        Random gen = new Random();
+        IntList dumbyList = new IntList(l.size);
+        int x;
+        int spot;
+        for(int i = 0; i<l.size; i++){
+            spot = gen.nextInt(l.size);
+            x = l.arr[spot];
+            l.remove(spot);
+            dumbyList.add(x);
+        }
+        copy(dumbyList, l);
     }
 
     /*
