@@ -12,7 +12,12 @@ public class IntDeque {
       System.out.println(id.getLast());
       System.out.println(id.getLast());
       System.out.println(id.getFirst());
-
+      //testing circ
+      System.out.println(id.head);
+      System.out.println(id.tail);
+      id.circ(2);
+      System.out.println(id.head);
+      System.out.println(id.tail);
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
