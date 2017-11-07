@@ -88,10 +88,14 @@ public class IntDeque {
 
   /*
   move num items from first to last
+  TODO: test
   */
   public void circ(int num) {
-
+    for (int i = 0; i < num; i++) {
+      putLast(getFirst());
+    }
   }
+
 
   /*
   return a Stack from this deque

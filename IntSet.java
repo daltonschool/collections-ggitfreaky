@@ -76,10 +76,9 @@ public class IntSet {
     void retainAll(IntSet s) {
         ArrayList<Integer> intersection = new ArrayList<Integer>();
         for(int i = 0; i < arr.length; i ++) {
-            if(!(s.contains(arr[i]))) {
+          //  if(!(s.contains(arr[i]))) {
             }
         }
-    }
 
     /*
     remove all items in s from this set
