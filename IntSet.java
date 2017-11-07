@@ -26,7 +26,7 @@ public class IntSet {
     }
 
 		//
-	}
+
 
 	
 	boolean[] arr;
