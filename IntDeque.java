@@ -9,9 +9,9 @@ public class IntDeque {
         id.putFirst(4);
         id.putFirst(5);
         id.putLast(7);
-      System.out.println(id.getLast());
-      System.out.println(id.getLast());
-      System.out.println(id.getFirst());
+      System.out.println(id.getLast()); //7
+      System.out.println(id.getLast()); //3
+      System.out.println(id.getFirst()); //5
 
     }
   public IntDeque(int defaultsize) {
