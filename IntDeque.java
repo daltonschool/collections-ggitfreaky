@@ -35,7 +35,14 @@ public class IntDeque {
   put the last item
   */
   public void putLast(int item) {
-    q[tail++] = item;
+    if (head==tail) resize();
+    if (tail == q.length - 1) {
+      q[tail] = item;
+      tail = 0;
+
+    } else {
+      q[tail++] = item;
+    }
   }
 
   /*
