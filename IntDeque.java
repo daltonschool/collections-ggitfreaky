@@ -15,16 +15,17 @@ public class IntDeque {
     q = new int[defaultsize];
     head=0;
     tail=1;
-
-
-
   }
-
   /*
   put the first item
   */
   public void putFirst(int item) {
-    q[head--] = item;
+    if(head == 0){
+      q[q.length-1]= item;
+      head = q.length-2;
+    }else{
+      q[head--] = item;
+    }
   }
 
   /*
