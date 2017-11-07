@@ -101,7 +101,8 @@ public class IntStack {
     how large is the stack?
     */
     public int size() {
-       return top;
+
+        return top;
     }
 
     /*
