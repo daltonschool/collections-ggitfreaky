@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class IntStack {
 
 	public static void main(String[] args) {
@@ -126,7 +128,7 @@ public class IntStack {
     return the item depth distance from the top
     */
     public int peek(int depth) {
-			return 0;
+        return stack[top-depth];
     }
 
     /*
