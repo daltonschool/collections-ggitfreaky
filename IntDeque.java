@@ -18,6 +18,13 @@ public class IntDeque {
       id.circ(2);
       System.out.println(id.head);
       System.out.println(id.tail);
+
+      id.putLast(8);
+      id.putLast(9);
+      id.putLast(10);
+      System.out.println(id.getLast());
+      System.out.println(id.getLast());
+      System.out.println(id.getFirst());
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];

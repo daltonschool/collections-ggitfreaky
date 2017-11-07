@@ -23,9 +23,8 @@ public class IntSet {
         System.out.println(kenny.containsAll(david));
 
 
-    }
 
-	
+
 	boolean[] arr;
 	
 	public IntSet(int size) {
