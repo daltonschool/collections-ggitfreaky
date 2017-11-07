@@ -103,9 +103,15 @@ public class IntList {
 
     /*
     fill — overwrites every element in a List with the specified value.
+    TODO:
+        iterate through
+        replace everything
     */
     static void fill(IntList l, int rep) {
-
+        for(int i = 0; i < l.size; i ++){
+            l.remove(i);
+            l.add(i, rep);
+        }
     }
 
     /*

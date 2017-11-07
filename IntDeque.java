@@ -9,29 +9,40 @@ public class IntDeque {
         id.putFirst(4);
         id.putFirst(5);
         id.putLast(7);
+      System.out.println(id.getLast());
+      System.out.println(id.getLast());
+      System.out.println(id.getFirst());
 
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
     tail=1;
-
-
-
   }
-
   /*
   put the first item
   */
   public void putFirst(int item) {
-    q[head--] = item;
+    if(head == 0){
+      q[q.length-1]= item;
+      head = q.length-2;
+    }else{
+      q[head--] = item;
+    }
   }
 
   /*
   put the last item
   */
   public void putLast(int item) {
-    q[tail++] = item;
+    if (head==tail) resize();
+    if (tail == q.length - 1) {
+      q[tail] = item;
+      tail = 0;
+
+    } else {
+      q[tail++] = item;
+    }
   }
 
   /*
@@ -80,15 +91,20 @@ public class IntDeque {
   get the last item
   */
   public int getLast() {
-    return 0;
+
+    return q[--tail];
   }
 
   /*
   move num items from first to last
+  TODO: test
   */
   public void circ(int num) {
-
+    for (int i = 0; i < num; i++) {
+      putLast(getFirst());
+    }
   }
+
 
   /*
   return a Stack from this deque

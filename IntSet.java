@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class IntSet {
 	public static void main(String[] args) {
 		IntSet devin = new IntSet(100);
@@ -22,7 +24,10 @@ public class IntSet {
 
 
     }
-	
+
+		//
+	}
+
 	
 	boolean[] arr;
 	
@@ -66,10 +71,14 @@ public class IntSet {
 
     /*
     remove all items from this set that are not in set s (intersection)
+    TODO:
     */
     void retainAll(IntSet s) {
-
-    }
+        ArrayList<Integer> intersection = new ArrayList<Integer>();
+        for(int i = 0; i < arr.length; i ++) {
+          //  if(!(s.contains(arr[i]))) {
+            }
+        }
 
     /*
     remove all items in s from this set
