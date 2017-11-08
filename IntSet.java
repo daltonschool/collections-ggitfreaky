@@ -23,6 +23,9 @@ public class IntSet {
         System.out.println(kenny.containsAll(david));
 
 
+
+
+
     }
 
 	boolean[] arr;
@@ -62,6 +65,10 @@ public class IntSet {
     add all items in set s to this set.
     */
     void addAll(IntSet s) {
+        for (int i = 0; i < arr.length; i++) {
+            if(s.contains(i)) add(i);
+
+        }
 
     }
 
@@ -71,16 +78,20 @@ public class IntSet {
     */
     void retainAll(IntSet s) {
         ArrayList<Integer> intersection = new ArrayList<Integer>();
-        for(int i = 0; i < arr.length; i ++) {
-          //  if(!(s.contains(arr[i]))) {
+        for (int i = 0; i < arr.length; i++) {
+            if (!(s.contains(i))) {
+                arr[i]=false;
             }
         }
-
+    }
     /*
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
-
+        for(int i= 0; i< arr.length; i ++){
+            if (s.contains(i)) this.remove(i);
+            }
+        }
     }
 
     /*
