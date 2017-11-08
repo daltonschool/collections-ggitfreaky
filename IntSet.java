@@ -23,6 +23,9 @@ public class IntSet {
         System.out.println(kenny.containsAll(david));
 
 
+
+
+
     }
 
 	boolean[] arr;
@@ -74,11 +77,12 @@ public class IntSet {
     */
     void retainAll(IntSet s) {
         ArrayList<Integer> intersection = new ArrayList<Integer>();
-        for(int i = 0; i < arr.length; i ++) {
-          //  if(!(s.contains(arr[i]))) {
+        for (int i = 0; i < arr.length; i++) {
+            if (!(s.contains(i))) {
+                arr[i]=false;
             }
         }
-
+    }
     /*
     remove all items in s from this set
     */
