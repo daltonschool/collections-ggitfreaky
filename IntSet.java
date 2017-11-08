@@ -62,6 +62,10 @@ public class IntSet {
     add all items in set s to this set.
     */
     void addAll(IntSet s) {
+        for (int i = 0; i < arr.length; i++) {
+            if(s.contains(i)) add(i);
+
+        }
 
     }
 
