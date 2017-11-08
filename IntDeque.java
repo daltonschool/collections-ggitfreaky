@@ -9,9 +9,21 @@ public class IntDeque {
         id.putFirst(4);
         id.putFirst(5);
         id.putLast(7);
+        id.print();
+
       System.out.println(id.getLast());
       System.out.println(id.getLast());
       System.out.println(id.getFirst());
+
+      //testing circ
+      System.out.println(id.head);
+      System.out.println(id.tail);
+      id.print();
+      id.circ(2);
+      System.out.println(id.head);
+      System.out.println(id.tail);
+      id.print();
+
 
       id.putLast(8);
       id.putLast(9);
@@ -141,7 +153,14 @@ public class IntDeque {
   print the Deque to the screen
   */
   public void print() {
+    System.out.print("HEAD > ");
+    int i = (head+1)%q.length;
 
+    while(i!=tail) {
+      System.out.print( q[i++] + " > ");
+      if(i==q.length) i = 0;
+    }
+    System.out.println( "TAIL");
   }
 
     /*
