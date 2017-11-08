@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class IntSet {
 	public static void main(String[] args) {
-		IntSet devin = new IntSet(100);
+        IntSet devin = new IntSet(100);
 
-		System.out.println(devin.contains(30));
-		devin.add(30);
-		System.out.println(devin.contains(30));
+        System.out.println(devin.contains(30));
+        devin.add(30);
+        System.out.println(devin.contains(30));
 
-		//ContainsAll Test Code
+        //ContainsAll Test Code
         IntSet kenny = new IntSet(100);
         IntSet david = new IntSet(100);
         IntSet franzese = new IntSet(100);
@@ -23,10 +23,8 @@ public class IntSet {
         System.out.println(kenny.containsAll(david));
 
 
-		//
+    }
 
-
-	
 	boolean[] arr;
 	
 	public IntSet(int size) {
@@ -74,7 +72,7 @@ public class IntSet {
     void retainAll(IntSet s) {
         ArrayList<Integer> intersection = new ArrayList<Integer>();
         for(int i = 0; i < arr.length; i ++) {
-            //if(!(s.contains(arr[i]))) {
+          //  if(!(s.contains(arr[i]))) {
             }
         }
 
@@ -89,7 +87,11 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
-
+        for (int i = arr.length-1; i > 0; i--) {
+            if (arr[i-1] == true)  arr[i] = true;
+            else arr[i] = false;
+        }
+        arr[0] = false;
     }
 
     /*
