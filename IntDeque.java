@@ -31,6 +31,14 @@ public class IntDeque {
       System.out.println(id.getLast());
       System.out.println(id.getLast());
       System.out.println(id.getFirst());
+
+      //peekFirst testing code
+      IntDeque ashley = new IntDeque(100);
+      ashley.putFirst(2);
+      ashley.putFirst(3);
+      ashley.putFirst(4);
+      ashley.putLast(5);
+      System.out.println(ashley.peekFirst());
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
