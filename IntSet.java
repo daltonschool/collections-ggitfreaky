@@ -95,6 +95,14 @@ public class IntSet {
             else arr[i] = false;
         }
         arr[0] = false;
+        if (arr[arr.length-1]){
+            boolean[] newArr = new boolean[arr.length+1];
+            for (int i = 0; i < arr.length; i++) {
+                newArr[i] = arr[i];
+            }
+            newArr[newArr.length-1] = true;
+            arr = newArr;
+        }
     }
 
     /*

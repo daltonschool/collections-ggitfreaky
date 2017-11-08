@@ -102,6 +102,7 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
+    if(head == q.length -1) return q[0];
     return q[++head];
   }
 
