@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class IntSet {
 	public static void main(String[] args) {
-		IntSet devin = new IntSet(100);
+        IntSet devin = new IntSet(100);
 
-		System.out.println(devin.contains(30));
-		devin.add(30);
-		System.out.println(devin.contains(30));
+        System.out.println(devin.contains(30));
+        devin.add(30);
+        System.out.println(devin.contains(30));
 
-		//ContainsAll Test Code
+        //ContainsAll Test Code
         IntSet kenny = new IntSet(100);
         IntSet david = new IntSet(100);
         IntSet franzese = new IntSet(100);
@@ -23,10 +23,8 @@ public class IntSet {
         System.out.println(kenny.containsAll(david));
 
 
-		//
-	}
+    }
 
-	
 	boolean[] arr;
 	
 	public IntSet(int size) {
@@ -93,10 +91,17 @@ public class IntSet {
     */
     void incrementAll(IntSet s) {
         for (int i = arr.length-1; i > 0; i--) {
-            if (arr[i-1] == true)  arr[i] = true;
-            else arr[i] = false;
+            arr[i] = arr[i-1];
         }
         arr[0] = false;
+        if (arr[arr.length-1]){
+            boolean[] newArr = new boolean[arr.length+1];
+            for (int i = 0; i < arr.length; i++) {
+                newArr[i] = arr[i];
+            }
+            newArr[newArr.length-1] = true;
+            arr = newArr;
+        }
     }
 
     /*
