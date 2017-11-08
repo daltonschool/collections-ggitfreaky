@@ -11,17 +11,13 @@ public class IntDeque {
         id.putLast(7);
         id.print();
 
-      System.out.println(id.getLast());
-      System.out.println(id.getLast());
-      System.out.println(id.getFirst());
+     // System.out.println(id.getLast());
+      //System.out.println(id.getLast());
+      //System.out.println(id.getFirst());
 
       //testing circ
-      System.out.println(id.head);
-      System.out.println(id.tail);
       id.print();
       id.circ(2);
-      System.out.println(id.head);
-      System.out.println(id.tail);
       id.print();
 
 
@@ -119,7 +115,7 @@ public class IntDeque {
 
   /*
   move num items from first to last
-  TODO: test
+
   */
   public void circ(int num) {
     for (int i = 0; i < num; i++) {
