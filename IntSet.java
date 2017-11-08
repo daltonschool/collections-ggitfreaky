@@ -65,6 +65,10 @@ public class IntSet {
     add all items in set s to this set.
     */
     void addAll(IntSet s) {
+        for (int i = 0; i < arr.length; i++) {
+            if(s.contains(i)) add(i);
+
+        }
 
     }
 
@@ -84,7 +88,10 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
-
+        for(int i= 0; i< arr.length; i ++){
+            if (s.contains(i)) this.remove(i);
+            }
+        }
     }
 
     /*
@@ -92,10 +99,17 @@ public class IntSet {
     */
     void incrementAll(IntSet s) {
         for (int i = arr.length-1; i > 0; i--) {
-            if (arr[i-1] == true)  arr[i] = true;
-            else arr[i] = false;
+            arr[i] = arr[i-1];
         }
         arr[0] = false;
+        if (arr[arr.length-1]){
+            boolean[] newArr = new boolean[arr.length+1];
+            for (int i = 0; i < arr.length; i++) {
+                newArr[i] = arr[i];
+            }
+            newArr[newArr.length-1] = true;
+            arr = newArr;
+        }
     }
 
     /*

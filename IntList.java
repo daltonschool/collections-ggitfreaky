@@ -80,6 +80,13 @@ public class IntList {
     rotate — rotates all the elements in a List by a specified distance.
     */
     static void rotate(IntList l) {
+        IntList copylist = new IntList(l.size);
+        for (int i = 0; i < l.size; i++) {
+            copylist.add(l.get(i), i);
+        }
+        for (int i = 0; i < l.size; i++) {
+
+        }
 
     }
 
