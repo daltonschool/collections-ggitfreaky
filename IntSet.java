@@ -171,7 +171,9 @@ public class IntSet {
     print the set pretty like.
     */
     void print() {
-
+        for (int i = 0; i < arr.length-1; i++) {
+            if(arr[i]) System.out.print(i + ", ");
+        }
     }
 
 		/*
