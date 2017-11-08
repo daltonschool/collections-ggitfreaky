@@ -89,7 +89,11 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
-
+        for (int i = arr.length-1; i > 0; i--) {
+            if (arr[i-1] == true)  arr[i] = true;
+            else arr[i] = false;
+        }
+        arr[0] = false;
     }
 
     /*
