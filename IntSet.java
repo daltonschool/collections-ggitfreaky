@@ -82,7 +82,10 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
-
+        for(int i= 0; i< arr.length; i ++){
+            if (s.contains(i)) this.remove(i);
+            }
+        }
     }
 
     /*
