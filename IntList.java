@@ -78,13 +78,17 @@ public class IntList {
 
     /*
     rotate — rotates all the elements in a List by a specified distance.
+    shifts it one to the right
     */
     static void rotate(IntList l) {
         IntList copylist = new IntList(l.size);
         for (int i = 0; i < l.size; i++) {
             copylist.add(l.get(i), i);
         }
+
         for (int i = 0; i < l.size; i++) {
+            if (i == l.size -1) l.add(copylist.get(l.size -1), 0);
+            l.add(copylist.get(i - 1), i);
 
         }
 
