@@ -4,6 +4,18 @@ public class IntList {
     private int[] arr;
     int size = 0;
 
+    public static void main(String[] args){
+        //rotate Code
+        System.out.println("Rotate");
+        IntList reverse = new IntList(4);
+        reverse.add(1);
+        reverse.add(2);
+        reverse.add(3);
+        reverse.add(4);
+        reverse.rotate();
+        System.out.println(reverse.get(0));
+    }
+
     public IntList(int default_size) {
       arr = new int[default_size];
     }
@@ -67,6 +79,8 @@ public class IntList {
             dumbyList.add(x);
         }
         copy(dumbyList, l);
+
+
     }
 
     /*
@@ -80,17 +94,19 @@ public class IntList {
     rotate — rotates all the elements in a List by a specified distance.
     shifts it one to the right
     */
-    static void rotate(IntList l) {
-        IntList copylist = new IntList(l.size);
-        for (int i = 0; i < l.size; i++) {
-            copylist.add(l.get(i), i);
+     void rotate() {
+        int[] copylist = new int[this.size];
+        for (int i = 0; i < this.size; i++) {
+            copylist[i] = this.get(i);
         }
+         for (int i = 0; i < copylist.length; i++) {
+             if (i == this.size-1) arr[0] = copylist[i];
+             else {
+                 arr[i] = copylist[i + 1];
+             }
+         }
 
-        for (int i = 0; i < l.size; i++) {
-            if (i == l.size -1) l.add(copylist.get(l.size -1), 0);
-            l.add(copylist.get(i - 1), i);
 
-        }
 
     }
 
