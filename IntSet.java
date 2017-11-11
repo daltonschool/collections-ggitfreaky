@@ -36,8 +36,19 @@ public class IntSet {
         isha1.retainAll(isha2);
         isha1.print();
 
-
-
+        //incrementAll test code
+        System.out.println();
+        IntSet ashley = new IntSet(11);
+        ashley.add(0);
+        ashley.add(4);
+        ashley.add(8);
+        ashley.add(3);
+        ashley.add(10);
+        ashley.print();
+        System.out.println();
+        ashley.incrementAll(ashley);
+        ashley.print();
+        System.out.println();
 
     }
 
@@ -111,10 +122,6 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
-        for (int i = arr.length-1; i > 0; i--) {
-            arr[i] = arr[i-1];
-        }
-        arr[0] = false;
         if (arr[arr.length-1]){
             boolean[] newArr = new boolean[arr.length+1];
             for (int i = 0; i < arr.length; i++) {
@@ -123,6 +130,10 @@ public class IntSet {
             newArr[newArr.length-1] = true;
             arr = newArr;
         }
+        for (int i = arr.length-1; i > 0; i--) {
+            arr[i] = arr[i-1];
+        }
+        arr[0] = false;
     }
 
     /*
@@ -172,7 +183,7 @@ public class IntSet {
     print the set pretty like.
     */
     void print() {
-        for (int i = 0; i < arr.length-1; i++) {
+        for (int i = 0; i < arr.length; i++) {
             if(arr[i]) System.out.print(i + ", ");
         }
     }
