@@ -1,6 +1,11 @@
 import java.util.Random;
 
 public class IntList {
+
+    public static void main(String[] args) {
+
+    }
+
     private int[] arr;
     int size = 0;
 
