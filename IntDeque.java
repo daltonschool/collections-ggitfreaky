@@ -29,12 +29,14 @@ public class IntDeque {
       System.out.println(id.getFirst());
 
       //peekFirst testing code
-      IntDeque ashley = new IntDeque(100);
+      IntDeque ashley = new IntDeque(10);
       ashley.putFirst(2);
       ashley.putFirst(3);
       ashley.putFirst(4);
       ashley.putLast(5);
-      System.out.println(ashley.peekFirst());
+      ashley.putLast(6);
+      System.out.println("Peek First should be four: " + ashley.peekFirst());
+
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
