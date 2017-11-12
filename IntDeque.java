@@ -11,17 +11,13 @@ public class IntDeque {
         id.putLast(7);
         id.print();
 
-      System.out.println(id.getLast());
-      System.out.println(id.getLast());
-      System.out.println(id.getFirst());
+     // System.out.println(id.getLast());
+      //System.out.println(id.getLast());
+      //System.out.println(id.getFirst());
 
       //testing circ
-      System.out.println(id.head);
-      System.out.println(id.tail);
       id.print();
       id.circ(2);
-      System.out.println(id.head);
-      System.out.println(id.tail);
       id.print();
 
 
@@ -31,6 +27,16 @@ public class IntDeque {
       System.out.println(id.getLast());
       System.out.println(id.getLast());
       System.out.println(id.getFirst());
+
+      //peekFirst testing code
+      IntDeque ashley = new IntDeque(10);
+      ashley.putFirst(2);
+      ashley.putFirst(3);
+      ashley.putFirst(4);
+      ashley.putLast(5);
+      ashley.putLast(6);
+      System.out.println("Peek First should be four: " + ashley.peekFirst());
+
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
@@ -41,6 +47,7 @@ public class IntDeque {
   put the first item
   */
   public void putFirst(int item) {
+    if(head == tail) resize();
     if(head == 0){
       q[q.length-1]= item;
       head = q.length-2;
@@ -53,14 +60,11 @@ public class IntDeque {
   put the last item
   */
   public void putLast(int item) {
-    if (head==tail) resize();
-    if (tail == q.length - 1) {
-      q[tail] = item;
+    q[tail++] = item;
+    if(tail == q.length) {
       tail = 0;
-
-    } else {
-      q[tail++] = item;
     }
+    if (head==tail) resize();
   }
 
   /*
@@ -118,7 +122,7 @@ public class IntDeque {
 
   /*
   move num items from first to last
-  TODO: test
+
   */
   public void circ(int num) {
     for (int i = 0; i < num; i++) {

@@ -8,7 +8,9 @@ public class IntSet {
         devin.add(30);
         System.out.println(devin.contains(30));
 
-        //ContainsAll Test Code
+
+
+        //Contains All Test Code
         IntSet kenny = new IntSet(100);
         IntSet david = new IntSet(100);
         IntSet franzese = new IntSet(100);
@@ -22,6 +24,31 @@ public class IntSet {
         System.out.println(kenny.containsAll(franzese));
         System.out.println(kenny.containsAll(david));
 
+
+        //
+
+
+        //retainAll test code
+        IntSet isha1 = new IntSet(10);
+        isha1.add(1);
+        isha1.add(2);
+        isha1.add(3);
+        isha1.add(4);
+        IntSet isha2 = new IntSet(10);
+        isha2.add(1);
+        isha2.add(3);
+        isha2.add(5);
+        isha2.add(7);
+        isha1.retainAll(isha2);
+        isha1.print();
+
+        //containsPrimeFactors test code
+        IntSet henry = new IntSet(6);
+        henry.add(2);
+        henry.add(5);
+        henry.add(3);
+
+        System.out.println("containsPrime Factors test -- should be true, it is: " + henry.containsPrimeFactors(30));
 
     }
 
@@ -62,6 +89,10 @@ public class IntSet {
     add all items in set s to this set.
     */
     void addAll(IntSet s) {
+        for (int i = 0; i < arr.length; i++) {
+            if(s.contains(i)) this.add(i);
+
+        }
 
     }
 
@@ -71,11 +102,12 @@ public class IntSet {
     */
     void retainAll(IntSet s) {
         ArrayList<Integer> intersection = new ArrayList<Integer>();
-        for(int i = 0; i < arr.length; i ++) {
-          //  if(!(s.contains(arr[i]))) {
+        for (int i = 0; i < arr.length; i++) {
+            if (!(s.contains(i))) {
+                arr[i]=false;
             }
         }
-
+    }
     /*
     remove all items in s from this set
     */
@@ -84,14 +116,15 @@ public class IntSet {
             if (s.contains(i)) this.remove(i);
             }
         }
-    }
+
 
     /*
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
         for (int i = arr.length-1; i > 0; i--) {
-            arr[i] = arr[i-1];
+            if (arr[i-1] == true)  arr[i] = true;
+            else arr[i] = false;
         }
         arr[0] = false;
         if (arr[arr.length-1]){
@@ -115,7 +148,20 @@ public class IntSet {
     does the set contain all of the prime factors of number
     */
     boolean containsPrimeFactors(int number) {
-    	return false;
+        IntSet primeFactors = new IntSet(number);
+        int i=2;
+        while(number>1) {
+            if(number%i == 0) {
+                primeFactors.add(i);
+                number=number/i;
+            } else {
+                i++;}
+        }
+       if(containsAll(primeFactors)){
+            return true;
+       } else {
+           return false;
+       }
     }
 
     /*
