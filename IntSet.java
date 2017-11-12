@@ -8,6 +8,8 @@ public class IntSet {
         devin.add(30);
         System.out.println(devin.contains(30));
 
+
+
         //ContainsAll Test Code
         IntSet kenny = new IntSet(100);
         IntSet david = new IntSet(100);
@@ -21,6 +23,8 @@ public class IntSet {
         david.add(22);
         System.out.println(kenny.containsAll(franzese));
         System.out.println(kenny.containsAll(david));
+
+
 
         //retainAll test code
         IntSet isha1 = new IntSet(10);
@@ -79,7 +83,7 @@ public class IntSet {
     */
     void addAll(IntSet s) {
         for (int i = 0; i < arr.length; i++) {
-            if(s.contains(i)) add(i);
+            if(s.contains(i)) this.add(i);
 
         }
 
@@ -105,7 +109,7 @@ public class IntSet {
             if (s.contains(i)) this.remove(i);
             }
         }
-    }
+
 
     /*
     increment every number in the set by 1
