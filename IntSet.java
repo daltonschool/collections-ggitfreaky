@@ -22,6 +22,19 @@ public class IntSet {
         System.out.println(kenny.containsAll(franzese));
         System.out.println(kenny.containsAll(david));
 
+        //retainAll test code
+        IntSet isha1 = new IntSet(10);
+        isha1.add(1);
+        isha1.add(2);
+        isha1.add(3);
+        isha1.add(4);
+        IntSet isha2 = new IntSet(10);
+        isha2.add(1);
+        isha2.add(3);
+        isha2.add(5);
+        isha2.add(7);
+        isha1.retainAll(isha2);
+        isha1.print();
 
 
 
@@ -66,7 +79,8 @@ public class IntSet {
     */
     void addAll(IntSet s) {
         for (int i = 0; i < arr.length; i++) {
-            if (s.contains(i)) add (i);
+            if(s.contains(i)) add(i);
+
         }
 
     }
@@ -87,7 +101,10 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
-
+        for(int i= 0; i< arr.length; i ++){
+            if (s.contains(i)) this.remove(i);
+            }
+        }
     }
 
     /*

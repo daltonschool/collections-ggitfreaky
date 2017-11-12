@@ -1,6 +1,25 @@
 import java.util.Random;
 
 public class IntList {
+
+    public static void main(String[] args) {
+
+        //replaceAll testing code
+        IntList ashley = new IntList(20);
+        ashley.add(4);
+        ashley.add(2);
+        ashley.add(5);
+        ashley.add(4);
+        ashley.add(4);
+        ashley.add(7);
+        ashley.add(4);
+        System.out.println("Should be 5: " + ashley.get(3));
+        System.out.println("Should be 4: " + ashley.get(0) + ", " + ashley.get(3) + ", " + ashley.get(4) + ", " + ashley.get(6));
+        ashley.replaceAll(ashley, 4, 10);
+        System.out.println("Should be 10: " + ashley.get(0) + ", " + ashley.get(3) + ", " + ashley.get(4) + ", " + ashley.get(6));
+
+    }
+
     private int[] arr;
     int size = 0;
 

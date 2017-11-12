@@ -11,17 +11,13 @@ public class IntDeque {
         id.putLast(7);
         id.print();
 
-      System.out.println(id.getLast());
-      System.out.println(id.getLast());
-      System.out.println(id.getFirst());
+     // System.out.println(id.getLast());
+      //System.out.println(id.getLast());
+      //System.out.println(id.getFirst());
 
       //testing circ
-      System.out.println(id.head);
-      System.out.println(id.tail);
       id.print();
       id.circ(2);
-      System.out.println(id.head);
-      System.out.println(id.tail);
       id.print();
 
 
@@ -31,6 +27,16 @@ public class IntDeque {
       System.out.println(id.getLast());
       System.out.println(id.getLast());
       System.out.println(id.getFirst());
+
+      //peekFirst testing code
+      IntDeque ashley = new IntDeque(10);
+      ashley.putFirst(2);
+      ashley.putFirst(3);
+      ashley.putFirst(4);
+      ashley.putLast(5);
+      ashley.putLast(6);
+      System.out.println("Peek First should be four: " + ashley.peekFirst());
+
     }
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
@@ -116,7 +122,7 @@ public class IntDeque {
 
   /*
   move num items from first to last
-  TODO: test
+
   */
   public void circ(int num) {
     for (int i = 0; i < num; i++) {
