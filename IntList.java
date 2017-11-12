@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class IntList {
@@ -17,6 +18,26 @@ public class IntList {
         System.out.println("Should be 4: " + ashley.get(0) + ", " + ashley.get(3) + ", " + ashley.get(4) + ", " + ashley.get(6));
         ashley.replaceAll(ashley, 4, 10);
         System.out.println("Should be 10: " + ashley.get(0) + ", " + ashley.get(3) + ", " + ashley.get(4) + ", " + ashley.get(6));
+
+        //Henry's test code
+        IntList mergeThis = new IntList(10);
+        mergeThis.add(2);
+        mergeThis.add(3);
+        mergeThis.add(8);
+        mergeThis.add(1);
+        mergeThis.add(9);
+        mergeThis.add(5);
+        mergeThis.add(2);
+        mergeThis.add(8);
+        mergeThis.add(7);
+        mergeThis.add(6);
+
+        sort(mergeThis);
+        System.out.print("Should be: 1, 2, 2, 3, 5, 6, 7, 8, 8, 9,   it is: ");
+        for (int i = 0; i < mergeThis.size; i++) {
+            System.out.print(mergeThis.get(i));
+            System.out.print(", ");
+        }
 
     }
 
@@ -68,8 +89,51 @@ public class IntList {
     sort — sorts a List using a merge sort algorithm, which provides a fast, stable sort. (A stable sort is one that does not reorder equal elements.)
     */
     static void sort(IntList l) {
+        //creating List of Lists (LoL) to hold all the broken up parts of l
+        ArrayList<IntList> listOfLists = new ArrayList<IntList>();
+        for(int i=0; i<l.size; i++){
+            IntList smallList = new IntList(1);
+            smallList.add(l.get(i));
+            listOfLists.add(smallList);
+        }
+        while(listOfLists.size() != 1) {
+            ArrayList<IntList> mergedLists = new ArrayList<IntList>();
+            if(listOfLists.size()%2 != 0){
+                IntList dummy = new IntList(0);
+                listOfLists.add(dummy);
+            }
+            for (int i = 0; i < listOfLists.size(); i += 2) {
+                mergedLists.add(merge(listOfLists.get(i), listOfLists.get(i + 1)));
+            }
+            listOfLists = mergedLists;
+        }
 
+        l.arr = listOfLists.get(0).arr; //l is now the
     }
+    static IntList merge(IntList l1, IntList l2) {
+        int i1 = 0;
+        int i2 = 0;
+
+        IntList m = new IntList(l1.size + l2.size + 2);
+
+        while(i1<l1.size && i2<l2.size) {
+            if(l1.get(i1) > l2.get(i2)) {
+                m.add(l2.get(i2++));
+            }
+            else {
+                m.add(l1.get(i1++));
+            }
+        }
+        while (i1<l1.size) {
+         m.add(l1.get(i1++));
+        }
+        while(i2<l2.size){
+            m.add(l2.get(i2++));
+        }
+
+        return m;
+    }
+
 
     /*
     shuffle — randomly permutes the elements in a List.
