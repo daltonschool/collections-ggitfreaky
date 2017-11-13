@@ -79,8 +79,6 @@ public class IntList {
             dumbyList.add(x);
         }
         copy(dumbyList, l);
-
-
     }
 
     /*
@@ -145,7 +143,11 @@ public class IntList {
     copy — copies the source List into the destination List.
     */
     static void copy(IntList l1, IntList l2) {
-
+        for(int i = 0; i < l1.size; i ++){
+            l2.add(i);
+            l1.remove(i);
+        }
+    }
     }
 
     /*

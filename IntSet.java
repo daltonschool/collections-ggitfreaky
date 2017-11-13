@@ -8,7 +8,9 @@ public class IntSet {
         devin.add(30);
         System.out.println(devin.contains(30));
 
-        //ContainsAll Test Code
+
+
+        //Contains All Test Code
         IntSet kenny = new IntSet(100);
         IntSet david = new IntSet(100);
         IntSet franzese = new IntSet(100);
@@ -21,6 +23,10 @@ public class IntSet {
         david.add(22);
         System.out.println(kenny.containsAll(franzese));
         System.out.println(kenny.containsAll(david));
+
+
+        //
+
 
         //retainAll test code
         IntSet isha1 = new IntSet(10);
@@ -36,8 +42,13 @@ public class IntSet {
         isha1.retainAll(isha2);
         isha1.print();
 
+        //containsPrimeFactors test code
+        IntSet henry = new IntSet(6);
+        henry.add(2);
+        henry.add(5);
+        henry.add(3);
 
-
+        System.out.println("containsPrime Factors test -- should be true, it is: " + henry.containsPrimeFactors(30));
 
     }
 
@@ -79,7 +90,7 @@ public class IntSet {
     */
     void addAll(IntSet s) {
         for (int i = 0; i < arr.length; i++) {
-            if(s.contains(i)) add(i);
+            if(s.contains(i)) this.add(i);
 
         }
 
@@ -101,9 +112,10 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
-        for(int i= 0; i< arr.length; i ++){
+        for(int i= 0; i< arr.length; i ++) {
             if (s.contains(i)) this.remove(i);
-            }
+        }
+
         }
 
 
@@ -112,7 +124,8 @@ public class IntSet {
     */
     void incrementAll(IntSet s) {
         for (int i = arr.length-1; i > 0; i--) {
-            arr[i] = arr[i-1];
+            if (arr[i-1] == true)  arr[i] = true;
+            else arr[i] = false;
         }
         arr[0] = false;
         if (arr[arr.length-1]){
@@ -136,7 +149,20 @@ public class IntSet {
     does the set contain all of the prime factors of number
     */
     boolean containsPrimeFactors(int number) {
-    	return false;
+        IntSet primeFactors = new IntSet(number);
+        int i=2;
+        while(number>1) {
+            if(number%i == 0) {
+                primeFactors.add(i);
+                number=number/i;
+            } else {
+                i++;}
+        }
+       if(containsAll(primeFactors)){
+            return true;
+       } else {
+           return false;
+       }
     }
 
     /*
@@ -172,9 +198,7 @@ public class IntSet {
     print the set pretty like.
     */
     void print() {
-        for (int i = 0; i < arr.length-1; i++) {
-            if(arr[i]) System.out.print(i + ", ");
-        }
+
     }
 
 		/*
