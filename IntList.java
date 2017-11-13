@@ -103,9 +103,6 @@ public class IntList {
                  arr[i] = copylist[i + 1];
              }
          }
-
-
-
     }
 
     /*
